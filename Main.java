@@ -36,6 +36,7 @@ public class Main {
         ArrayList<Course> courses = new ArrayList<>();
         courses.add(new Course("Computer Science", 4));
         courses.add(new Course("Mathematics", 3));
+        courses.add(new Course("Professional Development", 4));
         // Add more courses as needed
         return courses;
     }
