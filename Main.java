@@ -1,162 +1,118 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Student> students = new ArrayList<>();
-        ArrayList<Course> courses = initializeCourses();
 
-        while (true) {
-            System.out.println("\nWelcome to the Course Management System!");
-            System.out.println("1. Student Login");
-            System.out.println("2. Lecturer Login");
-            System.out.println("3. Admin Login");
-        
-            System.out.print("\nSelect an option: ");
+        User[] users = new User[3];
+        users[0] = new Student("Student 1", "Computer Science", "Computer Science Lab", 3.5);
+        users[1] = new Lecturer("Lecturer 1", "Computer Science", "Computer Science Department");
+        users[2] = new Admin("Admin 1", "IT Department", "Computing Center");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine(); 
+        System.out.println("Choose user type:");
+        System.out.println("1. Student");
+        System.out.println("2. Lecturer");
+        System.out.println("3. Admin");
+        int userChoice = scanner.nextInt();
 
-            if (choice == 1) {
-                studentLogin(students, courses, scanner);
-            } else if (choice == 2) {
-                lecturerLogin(courses, scanner);
-            } else if (choice == 3) {
-                adminLogin(students, courses, scanner);
-            
-            } else {
-                System.out.println("Invalid. Please try again.");
-            }
-        }
-    }
+        User currentUser = users[userChoice - 1];
+        currentUser.printUserInfo();
 
-    private static ArrayList<Course> initializeCourses() {
-        ArrayList<Course> courses = new ArrayList<>();
-        courses.add(new Course("Computer Science", 4));
-        courses.add(new Course("Mathematics", 3));
-        courses.add(new Course("Professional Development", 4));
-        // Add more courses as needed
-        return courses;
-    }
-
-    private static void studentLogin(ArrayList<Student> students, ArrayList<Course> courses, Scanner scanner) {
-        System.out.print("Enter student ID: ");
-        String studentId = scanner.nextLine();
-        Student student = findStudent(students, studentId);
-
-        if (student == null) {
-            student = new Student(studentId);
-            students.add(student);
-        }
-
-        while (true) {
-            System.out.println("\nStudent Menu:");
-            System.out.println("1. Enroll in a course");
-            System.out.println("2. View enrolled courses");
-            System.out.println("3. Logout");
-            System.out.print("\nSelect an option: ");
-
-            int studentChoice = scanner.nextInt();
-            scanner.nextLine();
-
-            if (studentChoice == 1) {
-                enrollStudentInCourse(student, courses, scanner);
-            } else if (studentChoice == 2) {
-                student.viewEnrolledCourses();
-            } else if (studentChoice == 3) {
-                System.out.println("Logging out as a student.");
-                return;
-            } else {
-                System.out.println("Invalid option. Please try again.");
-            }
-        }
-    }
-    private static void lecturerLogin(ArrayList<Course> courses, Scanner scanner) {
-      
-    }
-
-    private static void adminLogin(ArrayList<Student> students, ArrayList<Course> courses, Scanner scanner) {
-    
-    }
-
-    public static void enrollStudentInCourse(Student student, ArrayList<Course> courses, Scanner scanner) {
-        System.out.println("Available Courses:");
-        for (int i = 0; i < courses.size(); i++) {
-            System.out.println((i + 1) + ". " + courses.get(i).getName());
-        }
-
-        System.out.print("Enter the number of the course to enroll in: ");
-        int courseNumber = scanner.nextInt();
-        scanner.nextLine();
-
-        if (courseNumber >= 1 && courseNumber <= courses.size()) {
-            Course selectedCourse = courses.get(courseNumber - 1);
-            if (student.enrollInCourse(selectedCourse)) {
-                System.out.println("\nEnrolled in " + selectedCourse.getName() + ".");
-            } else {
-                System.out.println("Unable to enroll. Already enrolled in the course.");
-            }
-        } else {
-            System.out.println("Invalid course number. Please try again.");
-        }
-    }
-
-    private static Student findStudent(ArrayList<Student> students, String studentId) {
-        for (Student student : students) {
-            if (student.getStudentId().equals(studentId)) {
-                return student;
-            }
-        }
-        return null;
-    }
-}
-class Student {
-    private String studentId;
-    private ArrayList<Course> enrolledCourses;
-
-    public Student(String studentId) {
-        this.studentId = studentId;
-        this.enrolledCourses = new ArrayList<>();
-    }
-    public String getStudentId() {
-        return studentId;
-    }
-    public boolean enrollInCourse(Course course) {
-        if (!enrolledCourses.contains(course)) {
-            enrolledCourses.add(course);
-            return true;
-        }
-        return false;
-    }
-
-    public void viewEnrolledCourses() {
-        if (enrolledCourses.isEmpty()) {
-            System.out.println("No enrolled courses.");
-        } else {
-            System.out.println("\nEnrolled Courses:");
-            for (Course course : enrolledCourses) {
-                System.out.println("- " + course.getName());
-            }
+        if (currentUser instanceof Student) {
+            System.out.println("Enroll in course:");
+            String course = scanner.next();
+            ((Student) currentUser).enrollInCourse(course);
+        } else if (currentUser instanceof Lecturer) {
+            System.out.println("Grade a student:");
+            String student = scanner.next();
+            int grade = scanner.nextInt();
+            ((Lecturer) currentUser).gradeStudent(student, grade);
+        } else if (currentUser instanceof Admin) {
+            System.out.println("Manage admin tasks...");
         }
     }
 }
-class Course {
-    private String name;
-    private int credits;
 
-    public Course(String name, int credits) {
+public abstract class User {
+    protected String name;
+    protected String department;
+    protected UserType userType;
+
+    public User(String name, String department, UserType userType) {
         this.name = name;
-        this.credits = credits;
+        this.department = department;
+        this.userType = userType;
     }
 
-    public String getName() {
-        return name;
+    public abstract void printUserInfo();
+}
+
+public class Student extends User {
+    private String major;
+    private String course;
+    private double gpa;
+
+    public Student(String name, String major, String course, double gpa) {
+        super(name, "", UserType.STUDENT);
+        this.major = major;
+        this.course = course;
+        this.gpa = gpa;
     }
 
-    public int getCredits() {
-        return credits;
+    public void enrollInCourse(String course) {
+        this.course = course;
+    }
+
+    @Override
+    public void printUserInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Major: " + major);
+        System.out.println("Course: " + course);
+        System.out.println("GPA: " + gpa);
     }
 }
 
+public class Lecturer extends User {
+    private String subject;
+    private String department;
+
+    public Lecturer(String name, String department, String subject) {
+        super(name, department, UserType.LECTURER);
+        this.subject = subject;
+        this.department = department;
+    }
+
+    public void gradeStudent(String student, int grade) {
+        // Assuming there is a student object, replace this with the actual code to grade the student
+        System.out.println("Grade for " + student + ": " + grade);
+    }
+
+    @Override
+    public void printUserInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Subject: " + subject);
+        System.out.println("Department: " + department);
+    }
+}
+
+public class Admin extends User {
+    private String department;
+
+    public Admin(String name, String department, String title) {
+        super(name, department, UserType.ADMIN);
+        this.department = department;
+    }
+
+    @Override
+    public void printUserInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+    }
+}
+
+public enum UserType {
+    STUDENT,
+    LECTURER,
+    ADMIN
+}
