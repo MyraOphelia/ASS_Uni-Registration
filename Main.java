@@ -64,7 +64,7 @@ public class Main {
 
     private static void lecturerLogin(ArrayList<Lecturer> lecturers, ArrayList<Course> courses, Scanner scanner) {
         // Placeholder logic for lecturer login
-        System.out.println("Lecturer login.");
+        System.out.println("Lecturer login placeholder.");
     }
 
     private static void adminLogin(ArrayList<Student> students, ArrayList<Lecturer> lecturers, ArrayList<Course> courses, Scanner scanner) {
@@ -144,6 +144,7 @@ public class Main {
 
         if (lecturer != null) {
             System.out.println("Available Courses:");
+            // ... (continued from the previous response)
             for (int i = 0; i < courses.size(); i++) {
                 System.out.println((i + 1) + ". " + courses.get(i).getName());
             }
@@ -160,7 +161,7 @@ public class Main {
                 System.out.println("Invalid course number. Please try again.");
             }
         } else {
-            System.out.println("Lecturer " + lecturerId + " not found.");
+            System.out.println("Lecturer with ID " + lecturerId + " not found.");
         }
     }
 
@@ -168,7 +169,6 @@ public class Main {
         System.out.println("Available Courses:");
         for (int i = 0; i < courses.size(); i++) {
             System.out.println((i + 1) + ". " + courses.get(i).getName());
-    
         }
 
         System.out.print("Enter the number of the course to view students and lecturers: ");
@@ -177,6 +177,10 @@ public class Main {
 
         if (courseNumber >= 1 && courseNumber <= courses.size()) {
             Course selectedCourse = courses.get(courseNumber - 1);
+
+            System.out.println("\nCourse Information:");
+            System.out.println("Course Name: " + selectedCourse.getName());
+            System.out.println("Credits: " + selectedCourse.getCredits());
 
             System.out.println("\nStudents enrolled in " + selectedCourse.getName() + ":");
             for (Student student : students) {
@@ -306,6 +310,10 @@ public class Main {
 
         public String getName() {
             return name;
+        }
+
+        public int getCredits() {
+            return credits;
         }
     }
 }
