@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
-        ArrayList<Lecturer> lecturers = new ArrayList<>();
-        ArrayList<Course> courses = new ArrayList<>();
+        ArrayList<Lecturer> lecturers = initializedLecturers();
+        ArrayList<Course> courses = initializedCourses();
 
         while (true) {
             System.out.println("\nWelcome to the Course Management System!");
@@ -63,9 +63,38 @@ public class Main {
     }
 
     private static void lecturerLogin(ArrayList<Lecturer> lecturers, ArrayList<Course> courses, Scanner scanner) {
-        // Placeholder logic for lecturer login
-        System.out.println("Lecturer login placeholder.");
+        System.out.print("Enter lecturer ID: ");
+        String lecturerId = scanner.nextLine();
+        
+        Lecturer lecturer = findLecturer(lecturers, lecturerId);
+    
+        if (lecturer == null) {
+            // If the lecturer does not exist, create a new lecturer
+            lecturer = new Lecturer(lecturerId);
+            lecturers.add(lecturer);
+            System.out.println("New lecturer created successfully.");
+        }
+    
+        while (true) {
+            System.out.println("\nLecturer Menu:");
+            System.out.println("1. View assigned courses");
+            System.out.println("2. Logout");
+            System.out.print("\nSelect an option: ");
+    
+            String lecturerChoice = scanner.nextLine();
+    
+            if ("1".equals(lecturerChoice)) {
+                lecturer.viewAssignedCourses();
+            } else if ("2".equals(lecturerChoice)) {
+                System.out.println("Logging out as a lecturer.");
+                return;
+            } else {
+                System.out.println("Invalid option. Please try again.");
+            }
+        }    
     }
+
+    
 
     private static void adminLogin(ArrayList<Student> students, ArrayList<Lecturer> lecturers, ArrayList<Course> courses, Scanner scanner) {
         System.out.println("\nAdmin Menu:");
@@ -117,6 +146,7 @@ public class Main {
         Lecturer lecturer = findLecturer(lecturers, lecturerId);
 
         if (lecturer == null) {
+            //if the lecturer does not exist, create a new lecturer.
             lecturer = new Lecturer(lecturerId);
             lecturers.add(lecturer);
             System.out.println("Lecturer created successfully.");
@@ -221,7 +251,24 @@ public class Main {
             System.out.println("Invalid course number. Please try again.");
         }
     }
+    private static ArrayList<Lecturer> initializedLecturers(){
+        ArrayList<Lecturer> lecturers = new ArrayList<>();
+        lecturers.add(new Lecturer("L1"));
+        lecturers.add(new Lecturer("L2"));
+        // Add more lecturers as needed
+        return lecturers;
+    }
 
+    private static ArrayList<Course> initializedCourses() {
+        ArrayList<Course> courses = new ArrayList<>();
+        courses.add(new Course("Object-Oriented Programming", 4));
+        courses.add(new Course("Calculus", 3));
+        courses.add(new Course("Professional Development", 4));
+        // Add more courses as needed
+        return courses;
+    }
+    
+    
     private static Student findStudent(ArrayList<Student> students, String studentId) {
         for (Student student : students) {
             if (student.getStudentId().equals(studentId)) {
@@ -286,10 +333,22 @@ public class Main {
             this.assignedCourses = new ArrayList<>();
         }
 
+       
+
         public String getLecturerId() {
             return lecturerId;
         }
+        public void viewAssignedCourses() {
+            if(assignedCourses.isEmpty()) {
+                System.out.println("No assigned courses.");
 
+            } else { 
+                System.out.println("\nAssigned Courses: ");
+                for (Course course : assignedCourses) {
+                    System.out.println("- " + course.getName());
+                }
+            }
+        }
         public void assignCourse(Course course) {
             assignedCourses.add(course);
         }
