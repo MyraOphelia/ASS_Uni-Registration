@@ -16,12 +16,12 @@ Mark N for Not completed, P for partially completed, Y for completed.
 
 No | Feature                                                                         | Completed (N/P/Y)
 -- | ------------------------------------------------------------------------------- | ---------------
-1  | Admin can create students and lecturers.                                        |Yes
-2  | Admin can create courses and assign courses courses to lecturers.               |Yes
-3  | Users can login and the system can recognize their user type.                   |Yes
-4  | Students can self-register for courses in new trimesters.                       |Yes
-5  | Lecturers can view all the students in their courses.                           |No
-6  | Admin can view all the students and the lecturers for courses.                  |Yes
+1  | Admin can create students and lecturers.                                        |Y
+2  | Admin can create courses and assign courses courses to lecturers.               |Y
+3  | Users can login and the system can recognize their user type.                   |Y
+4  | Students can self-register for courses in new trimesters.                       |Y
+5  | Lecturers can view all the students in their courses.                           |N
+6  | Admin can view all the students and the lecturers for courses.                  |Y
 
 
 ## C. Link to Video Presentation
