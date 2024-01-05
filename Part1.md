@@ -4,10 +4,10 @@
 
 No | ID         | Name                     | Task descriptions | Contribution %
 -- | ---------- | ------------------------ | ----------------- | --------------
-1  |            |                          |                   |
-2  |            |                          |                   |
-3  |            |                          |                   |
-4  |            |                          |                   |
+1  |1231301467  |Intan Nur Habriah         |                   |
+2  |1231302444  |Myra Ophelia Iman         |                   |
+3  |1221301132  |Hilman Danish             |                   |
+4  |1211103899  |Izzfahmi                  |                   |
 
 
 ## B. Feature Completion
@@ -16,12 +16,12 @@ Mark N for Not completed, P for partially completed, Y for completed.
 
 No | Feature                                                                         | Completed (N/P/Y)
 -- | ------------------------------------------------------------------------------- | ---------------
-1  | Admin can create students and lecturers.                                        |
-2  | Admin can create courses and assign courses courses to lecturers.               |
-3  | Users can login and the system can recognize their user type.                   |
-4  | Students can self-register for courses in new trimesters.                       |
-5  | Lecturers can view all the students in their courses.                           |
-6  | Admin can view all the students and the lecturers for courses.                  |
+1  | Admin can create students and lecturers.                                        |Yes
+2  | Admin can create courses and assign courses courses to lecturers.               |Yes
+3  | Users can login and the system can recognize their user type.                   |Yes
+4  | Students can self-register for courses in new trimesters.                       |Yes
+5  | Lecturers can view all the students in their courses.                           |No
+6  | Admin can view all the students and the lecturers for courses.                  |Yes
 
 
 ## C. Link to Video Presentation
