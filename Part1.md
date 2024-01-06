@@ -2,13 +2,15 @@
 
 ## A. Member Contributions
 
-No | ID         | Name                     | Task descriptions | Contribution %
--- | ---------- | ------------------------ | ----------------- | --------------
-1  |1231301467  |Intan Nur Habriah         |                   |25%
-2  |1231302444  |Myra Ophelia Iman         |                   |20%
-3  |1221301132  |Hilman Danish             |video presentation 
-                                            editing            |15%
-4  |1211103899  |Izzfahmi                  |                   |5%
+No | ID         | Name                     | Task descriptions    | Contribution %
+-- | ---------- | ------------------------ | -----------------    | --------------
+1  |1231301467  |Intan Nur Habriah         |                      |25%
+2  |1231302444  |Myra Ophelia Iman         |Gather ideas and 
+                                            Contribute to the code 
+                                            development process   |20%
+3  |1221301132  |Hilman Danish             |video editing         |15%
+4  |1211103899  |Izzfahmi                  |Contribute for the 
+                                            codes                 |5%
 
 
 ## B. Feature Completion
