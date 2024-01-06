@@ -4,7 +4,7 @@
 
 No | ID         | Name              | Task descriptions                                          | Contribution %
 -- | ---------- | ------------------| -----------------                                          | --------------
-1  |1231301467  |Intan Nur Habriah  |                                                            |25%
+1  |1231301467  |Intan Nur Habriah  |Lead the overall development of the codes                   |25%
 2  |1231302444  |Myra Ophelia Iman  |Gather ideas and contribute to the codes development process|20%                 
 3  |1221301132  |Hilman Danish      |video editing                                               |15%
 4  |1211103899  |Izzfahmi           |Contribute to the codes development process                 |5%
