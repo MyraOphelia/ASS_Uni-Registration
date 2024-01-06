@@ -5,9 +5,7 @@
 No | ID         | Name                     | Task descriptions    | Contribution %
 -- | ---------- | ------------------------ | -----------------    | --------------
 1  |1231301467  |Intan Nur Habriah         |                      |25%
-2  |1231302444  |Myra Ophelia Iman         |Gather ideas and 
-                                            Contribute to the code 
-                                            development process   |20%
+2  |1231302444  |Myra Ophelia Iman         |Gather ideas and      |20%                                            Contibute 
 3  |1221301132  |Hilman Danish             |video editing         |15%
 4  |1211103899  |Izzfahmi                  |Contribute for the 
                                             codes                 |5%
