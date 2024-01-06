@@ -4,10 +4,11 @@
 
 No | ID         | Name                     | Task descriptions | Contribution %
 -- | ---------- | ------------------------ | ----------------- | --------------
-1  |1231301467  |Intan Nur Habriah         |                   |
-2  |1231302444  |Myra Ophelia Iman         |                   |
-3  |1221301132  |Hilman Danish             |                   |
-4  |1211103899  |Izzfahmi                  |                   |
+1  |1231301467  |Intan Nur Habriah         |                   |25%
+2  |1231302444  |Myra Ophelia Iman         |                   |20%
+3  |1221301132  |Hilman Danish             |video presentation 
+                                            editing            |15%
+4  |1211103899  |Izzfahmi                  |                   |5%
 
 
 ## B. Feature Completion
