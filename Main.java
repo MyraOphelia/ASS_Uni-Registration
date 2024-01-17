@@ -14,6 +14,7 @@ public class Main {
             System.out.println("1. Admin Login");
             System.out.println("2. Lecturer Login");
             System.out.println("3. Student Login");
+            System.out.println("0. End System");
 
             System.out.print("\nSelect an option: ");
             String userType = scanner.nextLine();
@@ -24,6 +25,8 @@ public class Main {
                 lecturerLogin(lecturers, courses, scanner);
             } else if ("3".equals(userType)) {
                 studentLogin(students, courses, scanner);
+            } else if("0".equals(userType)){
+                break;
             } else {
                 System.out.println("Invalid option. Please try again.");
             }
@@ -93,6 +96,9 @@ public class Main {
             }
         }    
     }
+
+    
+
     private static void adminLogin(ArrayList<Student> students, ArrayList<Lecturer> lecturers, ArrayList<Course> courses, Scanner scanner) {
         System.out.println("\nAdmin Menu:");
         System.out.println("1. Create Student");
@@ -163,6 +169,7 @@ public class Main {
         courses.add(course);
         System.out.println("Course created successfully.");
     }
+
     private static void assignCourseToLecturer(ArrayList<Lecturer> lecturers, ArrayList<Course> courses, Scanner scanner) {
         System.out.print("Enter lecturer ID: ");
         String lecturerId = scanner.nextLine();
@@ -174,6 +181,7 @@ public class Main {
             for (int i = 0; i < courses.size(); i++) {
                 System.out.println((i + 1) + ". " + courses.get(i).getName());
             }
+
             System.out.print("Enter the number of the course to assign: ");
             int courseNumber = scanner.nextInt();
             scanner.nextLine();
@@ -213,6 +221,7 @@ public class Main {
                     System.out.println("- Student ID: " + student.getStudentId());
                 }
             }
+
             System.out.println("\nLecturer assigned to " + selectedCourse.getName() + ":");
             for (Lecturer lecturer : lecturers) {
                 if (lecturer.isTeachingCourse(selectedCourse)) {
@@ -223,6 +232,7 @@ public class Main {
             System.out.println("Invalid course number. Please try again.");
         }
     }
+
     private static void enrollStudentInCourse(Student student, ArrayList<Course> courses, Scanner scanner) {
         System.out.println("Available Courses:");
         for (int i = 0; i < courses.size(); i++) {
@@ -254,13 +264,14 @@ public class Main {
 
     private static ArrayList<Course> initializedCourses() {
         ArrayList<Course> courses = new ArrayList<>();
-        courses.add(new Course("CS113", 3));
-        courses.add(new Course("CS123", 3));
-        courses.add(new Course("CS214", 4));
+        courses.add(new Course("Object-Oriented Programming", 4));
+        courses.add(new Course("Calculus", 3));
+        courses.add(new Course("Professional Development", 4));
         // Add more courses as needed
         return courses;
     }
-
+    
+    
     private static Student findStudent(ArrayList<Student> students, String studentId) {
         for (Student student : students) {
             if (student.getStudentId().equals(studentId)) {
