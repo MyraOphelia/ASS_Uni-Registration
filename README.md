@@ -11,48 +11,48 @@ This is the  university semester project. This software is developed in JavaFX l
 <hr>
 
 ### Faculty Dashboard
-![faculty dashboard](https://raw.githubusercontent.com/zawster/Unirome/master/images/facultyDash-2.png)
+![faculty dashboard](facultyDash-2.png)
 <hr>
 
 ### Admin Dashboard
-![admin dashboard](https://raw.githubusercontent.com/zawster/Unirome/master/images/adminHome-3.png)
+![admin dashboard](adminHome-3.png)
 <hr>
 
 ### Student Dashboard
-![student dashboard](https://raw.githubusercontent.com/zawster/Unirome/master/images/studentHome-4.png)
+![student dashboard](studentHome-4.png)
 
 <hr>
 
 ### Course registration
-![Course registration](https://raw.githubusercontent.com/zawster/Unirome/master/images/courseReg-5.png)
+![Course registration](courseReg-5.png)
 <hr>
 
 ### Add User
-![Add User](https://raw.githubusercontent.com/zawster/Unirome/master/images/addUser-6.png)
+![Add User](addUser-6.png)
 <hr>
 
 ### View All Users
-![View All Users](https://raw.githubusercontent.com/zawster/Unirome/master/images/allUsers-7.png)
+![View All Users](allUsers-7.png)
 <hr>
 
 ### View Offered Courses
-![offered courses](https://raw.githubusercontent.com/zawster/Unirome/master/images/offeredCourses-8.png)
+![offered courses](offeredCourses-8.png)
 <hr>
 
 ### View Attendence
-![Student View Attendence](https://raw.githubusercontent.com/zawster/Unirome/master/images/attendence-9.png)
+![Student View Attendence](attendence-9.png)
 <hr>
 
 ### View Study Plan
-![Study Plan](https://raw.githubusercontent.com/zawster/Unirome/master/images/studyPlan-10.png)
+![Study Plan](studyPlan-10.png)
 <hr>
 
 ### View Fee Details
-![View Fee details](https://raw.githubusercontent.com/zawster/Unirome/master/images/feeDetails-11.png)
+![View Fee details](feeDetails-11.png)
 <hr>
 
 ### Admin Update creditHrs Fee
-![View All Users](https://raw.githubusercontent.com/zawster/Unirome/master/images/updateFee-12.png)
+![View All Users](updateFee-12.png)
 <hr>
 
 
