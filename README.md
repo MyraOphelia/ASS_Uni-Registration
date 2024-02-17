@@ -7,7 +7,7 @@ This is the  university semester project. This software is developed in JavaFX l
 <hr>
 
 ### Main Window
-![main window](https://raw.githubusercontent.com/zawster/Unirome/master/images/main-1.png)
+![main window](main-1.png)
 <hr>
 
 ### Faculty Dashboard
